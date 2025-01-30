@@ -119,7 +119,7 @@ function convertToLaTeX(input) {
   latex = latex
     // x^2 => x^{2} for digits
     .replace(/\^\((.*?)\)/g, "^{($1)}")
-    // Brüche
+    // Brüche (Todo): ([whatever]*sqrt(x))/y etc
     // Handle all fraction cases, including (a)/(b), a/(bcd), (abc)/d, a/sqrt(...), and sqrt(...)/a
     .replace(/\(\s*([^()]+)\s*\)\s*\/\s*\(\s*([^()]+)\s*\)/g, "\\frac{$1}{$2}") // (a)/(b)
     .replace(/\(\s*([^()]+)\s*\)\s*\/\s*([^()\s]+)/g, "\\frac{$1}{$2}") // (abc)/d
